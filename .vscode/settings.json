@@ -1,0 +1,33 @@
+{
+    "python.autoComplete.extraPaths": [
+        "/home/meric/ros2_ws/install/setan_v1_py_scripts/lib/python3.10/site-packages",
+        "/home/meric/ros2_ws/install/robot_simulation_codes/local/lib/python3.10/dist-packages",
+        "/home/meric/ros2_ws/install/robot_sim_codes/lib/python3.10/site-packages",
+        "/home/meric/ros2_ws/install/setan_v1_interfaces/local/lib/python3.10/dist-packages",
+        "/home/meric/ros2_ws/install/ros2_simple_canbus/local/lib/python3.10/dist-packages",
+        "/home/meric/ros2_ws/install/ros2_simple_canbus_interface/local/lib/python3.10/dist-packages",
+        "/home/meric/ros2_ws/install/robot_controller/local/lib/python3.10/dist-packages",
+        "/home/meric/ros2_ws/install/robot_bringup/local/lib/python3.10/dist-packages",
+        "/home/meric/ros2_ws/install/ika_py_scripts/lib/python3.10/site-packages",
+        "/home/meric/ros2_ws/install/ika_interfaces/local/lib/python3.10/dist-packages",
+        "/home/meric/ros2_ws/install/ads_sim_py_code/lib/python3.10/site-packages",
+        "/opt/ros/humble/lib/python3.10/site-packages",
+        "/opt/ros/humble/local/lib/python3.10/dist-packages"
+    ],
+    "python.analysis.extraPaths": [
+        "/home/meric/ros2_ws/install/setan_v1_py_scripts/lib/python3.10/site-packages",
+        "/home/meric/ros2_ws/install/robot_simulation_codes/local/lib/python3.10/dist-packages",
+        "/home/meric/ros2_ws/install/robot_sim_codes/lib/python3.10/site-packages",
+        "/home/meric/ros2_ws/install/setan_v1_interfaces/local/lib/python3.10/dist-packages",
+        "/home/meric/ros2_ws/install/ros2_simple_canbus/local/lib/python3.10/dist-packages",
+        "/home/meric/ros2_ws/install/ros2_simple_canbus_interface/local/lib/python3.10/dist-packages",
+        "/home/meric/ros2_ws/install/robot_controller/local/lib/python3.10/dist-packages",
+        "/home/meric/ros2_ws/install/robot_bringup/local/lib/python3.10/dist-packages",
+        "/home/meric/ros2_ws/install/ika_py_scripts/lib/python3.10/site-packages",
+        "/home/meric/ros2_ws/install/ika_interfaces/local/lib/python3.10/dist-packages",
+        "/home/meric/ros2_ws/install/ads_sim_py_code/lib/python3.10/site-packages",
+        "/opt/ros/humble/lib/python3.10/site-packages",
+        "/opt/ros/humble/local/lib/python3.10/dist-packages"
+    ],
+    "ros.distro": "humble"
+}

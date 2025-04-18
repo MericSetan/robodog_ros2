@@ -1,0 +1,92 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+    <xacro:macro name="right_leg_link" params="name ">
+
+        !<!-- leg  --> 
+        <link name="${name}"></link> 
+        <!-- P0 -->
+        <xacro:p_link name="${name}_P0_link" length="${P0_length}" width="${P0_width}" height="${P0_height}" mass="${P0_mass}" color="${P0_color}"/>
+        <!-- R0 -->
+        <xacro:r_link name="${name}_R0_link" length="${R0_length}" radius="${R0_radius}" mass="${R0_mass}" color="${R0_color}"/>
+        <!-- P1 -->
+        <xacro:p_link name="${name}_P1_link" length="${P1_length}" width="${P1_width}" height="${P1_height}" mass="${P1_mass}" color="${P1_color}"/>
+        <!-- R1 -->
+        <xacro:r_link name="${name}_R1_link" length="${R1_length}" radius="${R1_radius}" mass="${R1_mass}" color="${R1_color}"/>
+        <!-- P2 -->
+        <xacro:p_link name="${name}_P2_link" length="${P2_length}" width="${P2_width}" height="${P2_height}" mass="${P2_mass}" color="${P2_color}"/>
+        <!-- R2 -->
+        <xacro:r_link name="${name}_R2_link" length="${R2_length}" radius="${R2_radius}" mass="${R2_mass}" color="${R2_color}"/>
+        <!-- P3 -->
+        <xacro:p_link name="${name}_P3_link" length="${P3_length}" width="${P3_width}" height="${P3_height}" mass="${P3_mass}" color="${P3_color}"/>
+        <!-- S0 -->
+        <xacro:s_link name="${name}_S0_link" radius="${S0_radius}" mass="${S0_mass}" color="${S0_color}"/>
+
+
+        <!-- leg-P0 -->
+        <joint name="${name}_P0_joint" type="fixed">
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+            <parent link="${name}"/>
+            <child link="${name}_P0_link"/>
+        </joint>
+
+        <!-- P0-R0 -->
+        <joint name="${name}_P0_R0_joint" type="revolute">
+            <origin xyz="${-(P0_length/2)}  ${-(P0_width/2)} ${(P0_height/2)} " rpy="0 ${pi/2} 0"/>
+            <parent link="${name}_P0_link"/>
+            <child link="${name}_R0_link"/>
+            <axis xyz="0 0 1"/> 
+            <limit effort="${R0_limit_effort}" lower="${R0_limit_lower}" upper="${R0_limit_upper}" velocity="${R0_limit_velocity}"/>
+            <dynamics damping="${R0_dynamics_damping}" friction="${R0_dynamics_friction}"/>                     
+        </joint>
+
+        <!-- R0-P1 -->
+        <joint name="${name}_R0_P1_joint" type="fixed">
+            <origin xyz="0 ${-(R0_radius+(R1_length/2))/2} ${P1_length/2}" rpy="0 0 0"/>
+            <parent link="${name}_R0_link"/>
+            <child link="${name}_P1_link"/>
+        </joint>
+
+        <!-- P1-R1 -->
+        <joint name="${name}_P1_R1_joint" type="revolute">
+            <origin xyz="0 ${-(R0_radius)+(P1_width/2)} ${P1_length/2}" rpy="${pi/2} 0 0"/>
+            <parent link="${name}_P1_link"/>
+            <child link="${name}_R1_link"/>
+            <axis xyz="0 0 1"/> 
+            <limit effort="${R1_limit_effort}" lower="${R1_limit_lower}" upper="${R1_limit_upper}" velocity="${R1_limit_velocity}"/>
+            <dynamics damping="${R1_dynamics_damping}" friction="${R1_dynamics_friction}"/>                     
+        </joint>
+
+        <!-- R1-P2 -->
+        <joint name="${name}_R1_P2_joint" type="fixed">
+            <origin xyz="${(P2_length/2)/sqrt_2} ${-(P2_length/2)/sqrt_2} ${P2_height/2}" rpy="0 0 ${-pi/4}"/>
+            <parent link="${name}_R1_link"/>
+            <child link="${name}_P2_link"/>
+        </joint>
+
+        <!-- P2-R2 -->
+        <joint name="${name}_P2_R2_joint" type="revolute">
+            <origin xyz="${(P2_length/2)} 0 ${-P2_height/2}" rpy="0 0 0"/>
+            <parent link="${name}_P2_link"/>
+            <child link="${name}_R2_link"/>
+            <axis xyz="0 0 1"/> 
+            <limit effort="${R2_limit_effort}" lower="${R2_limit_lower}" upper="${R2_limit_upper}" velocity="${R2_limit_velocity}"/>
+            <dynamics damping="${R2_dynamics_damping}" friction="${R2_dynamics_friction}"/>    
+        </joint>
+
+        <!-- R2-P3 -->
+        <joint name="${name}_R2_P3_joint" type="fixed">
+            <origin xyz="0 ${P3_length/2} ${P3_height/2}" rpy="0 0 ${pi/2}"/>
+            <parent link="${name}_R2_link"/>
+            <child link="${name}_P3_link"/>
+        </joint>
+
+        <!-- P3-S0 -->
+        <joint name="${name}_P3_S0_joint" type="fixed">
+            <origin xyz="${P3_length/2} 0 ${P3_height/2}" rpy="0 0 0"/>
+            <parent link="${name}_P3_link"/>
+            <child link="${name}_S0_link"/>
+        </joint>
+
+    </xacro:macro>
+</robot>

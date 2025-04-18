@@ -1,0 +1,33 @@
+controller_manager:
+  ros__parameters:
+    update_rate: 60  # Hz
+    use_sim_time: true
+
+    joint_state_broadcaster:
+      type: joint_state_broadcaster/JointStateBroadcaster
+      
+
+    joint_position_controller:
+      type: position_controllers/JointGroupPositionController
+      
+
+joint_position_controller:
+  ros__parameters:
+    joints:
+      - front_left_leg_P0_R0_joint
+      - front_left_leg_P1_R1_joint
+      - front_left_leg_P2_R2_joint
+      - front_right_leg_P0_R0_joint
+      - front_right_leg_P1_R1_joint
+      - front_right_leg_P2_R2_joint
+      - back_left_leg_P0_R0_joint
+      - back_left_leg_P1_R1_joint
+      - back_left_leg_P2_R2_joint
+      - back_right_leg_P0_R0_joint
+      - back_right_leg_P1_R1_joint
+      - back_right_leg_P2_R2_joint
+    command_interfaces:
+      - position
+    state_interfaces:
+      - position
+

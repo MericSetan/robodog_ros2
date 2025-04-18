@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+    <xacro:macro name="p_link" params="name length width height mass color">
+        <link name="${name}">
+            <visual>
+                <origin xyz="0 0 ${height/2}" rpy="0 0 0"/>  
+                <geometry>
+                    <box size="${length} ${width} ${height}" />
+                </geometry>
+                <material name="${color}"/>
+            </visual>
+            <collision>
+                <origin xyz="0 0 ${height/2}" rpy="0 0 0"/>
+                <geometry>
+                    <box size="${length} ${width} ${height}" />
+                </geometry>
+            </collision>
+            <xacro:inertial_box mass="${mass}" x="${length}" y="${width}" z="${height}" origin="0 0 ${height/2}" />
+        </link>
+    </xacro:macro>
+
+</robot>

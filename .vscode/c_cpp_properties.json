@@ -1,0 +1,44 @@
+{
+  "configurations": [
+    {
+      "browse": {
+        "databaseFilename": "${default}",
+        "limitSymbolsToIncludedHeaders": false
+      },
+      "includePath": [
+        "/home/meric/ros2_ws/install/setan_v1_interfaces/include/**",
+        "/home/meric/ros2_ws/install/serial/include/**",
+        "/home/meric/ros2_ws/install/ros2_simple_canbus_interface/include/**",
+        "/home/meric/ros2_ws/install/ros2_control_demo_example_1/include/**",
+        "/home/meric/ros2_ws/install/robot_controller/include/**",
+        "/home/meric/ros2_ws/install/robot_bringup/include/**",
+        "/home/meric/ros2_ws/install/ika_interfaces/include/**",
+        "/home/meric/ros2_ws/install/bitirme_robot/include/**",
+        "/opt/ros/humble/include/**",
+        "/home/meric/ros2_ws/src/ads_sim/include/**",
+        "/home/meric/ros2_ws/src/ads_sim_interface/include/**",
+        "/home/meric/ros2_ws/src/bitirme_robot/include/**",
+        "/home/meric/ros2_ws/src/ika_description/include/**",
+        "/home/meric/ros2_ws/src/ika_gazebo/include/**",
+        "/home/meric/ros2_ws/src/rf2o_laser_odometry/include/**",
+        "/home/meric/ros2_ws/src/robodog/include/**",
+        "/home/meric/ros2_ws/src/robot_bringup/include/**",
+        "/home/meric/ros2_ws/src/robot_controller/include/**",
+        "/home/meric/ros2_ws/src/robot_description/include/**",
+        "/home/meric/ros2_ws/src/robot_firmware/include/**",
+        "/home/meric/ros2_ws/src/ros2_simple_canbus/include/**",
+        "/home/meric/ros2_ws/src/serial/include/**",
+        "/home/meric/ros2_ws/src/setan_v1_description/include/**",
+        "/home/meric/ros2_ws/src/setan_v1_gazebo/include/**",
+        "/home/meric/ros2_ws/src/setan_v1_slam/include/**",
+        "/usr/include/**"
+      ],
+      "name": "ROS",
+      "intelliSenseMode": "gcc-x64",
+      "compilerPath": "/usr/bin/gcc",
+      "cStandard": "gnu11",
+      "cppStandard": "c++14"
+    }
+  ],
+  "version": 4
+}

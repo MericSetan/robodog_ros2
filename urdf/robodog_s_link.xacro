@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+ 
+    <xacro:macro name="s_link" params="name radius mass color">
+    <!--  silindir olarak degistir-->
+        <link name="${name}">
+            <visual>
+                <origin xyz="0 0 0" rpy="0 0 0"/>
+                <geometry>
+                    <sphere radius="${radius}"/> 
+                </geometry>  
+                <material name="${color}"/>          
+            </visual>
+            <collision>
+                <origin xyz="0 0 0" rpy="0 0 0"/>
+                <geometry>
+                    <sphere radius="${radius}"/> 
+                </geometry>
+                <surface>
+                    <friction>
+                        <ode>
+                            <mu>100.0</mu> <!-- Static -->
+                            <mu2>100.0</mu2> <!-- Kinematic -->
+                        </ode>
+                    </friction>
+                </surface>
+            </collision>
+            <xacro:inertial_sphere mass="${mass}" radius="${radius}">
+                <origin xyz="0 0 0" rpy="0 0 0"/>
+            </xacro:inertial_sphere>
+        </link>
+
+    </xacro:macro>
+</robot>

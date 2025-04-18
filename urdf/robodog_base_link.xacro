@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" >
+ 
+    <xacro:macro name="base_link" params="name">
+        <link name="${name}">
+            <visual>
+                <origin xyz="0 0 ${base_height/2}" rpy="0 0 0"/>
+                <geometry>
+                    <box size="${base_length} ${base_width} ${base_height}" />
+                </geometry>
+                <material name="${base_color}"/>
+            </visual>
+            <colusion>
+                <origin xyz="0 0 ${base_height/2}" rpy="0 0 0"/>
+                <geometry>
+                    <box size="${base_length} ${base_width} ${base_height}" />
+                </geometry>
+            </colusion>
+        </link>
+    </xacro:macro>
+
+</robot>

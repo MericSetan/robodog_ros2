@@ -1,0 +1,143 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" >
+
+    <!-- Maths-->
+    <xacro:property name="sqrt_2" value="1.41421356237"/>
+    
+    <!-- Link Parameters-->
+
+    <xacro:property name="base_length" value="1.0" />
+    <xacro:property name="base_width" value="0.5" />
+    <xacro:property name="base_height" value="0.15" />
+    <xacro:property name="base_mass" value="0.1" />
+    <xacro:property name="base_color" value="teal" />
+
+    <xacro:property name="P0_length" value="0.2" />
+    <xacro:property name="P0_width" value="0.1" />
+    <xacro:property name="P0_height" value="0.05" />
+    <xacro:property name="P0_mass" value="0.1" />
+    <xacro:property name="P0_color" value="blue" />
+
+    <xacro:property name="R0_length" value="0.2" />
+    <xacro:property name="R0_radius" value="0.05" />
+    <xacro:property name="R0_mass" value="0.1" />
+    <xacro:property name="R0_color" value="orange" />
+    <xacro:property name="R0_limit_effort" value="10.0" />
+    <xacro:property name="R0_limit_lower" value="${-pi}" />
+    <xacro:property name="R0_limit_upper" value="${pi}" />
+    <xacro:property name="R0_limit_velocity" value="1.0" />
+    <xacro:property name="R0_dynamics_damping" value="0.01" />
+    <xacro:property name="R0_dynamics_friction" value="1000.0" />
+
+    <xacro:property name="R1_length" value="0.1" />
+    <xacro:property name="R1_radius" value="0.1" />
+    <xacro:property name="R1_mass" value="0.1" />
+    <xacro:property name="R1_color" value="blue" />
+    <xacro:property name="R1_limit_effort" value="10.0" />
+    <xacro:property name="R1_limit_lower" value="${-pi}" />
+    <xacro:property name="R1_limit_upper" value="${pi}" />
+    <xacro:property name="R1_limit_velocity" value="1.0" />
+    <xacro:property name="R1_dynamics_damping" value="0.01" />
+    <xacro:property name="R1_dynamics_friction" value="1000.0" />
+    
+    <xacro:property name="R2_length" value="0.1" />
+    <xacro:property name="R2_radius" value="0.05" />
+    <xacro:property name="R2_mass" value="0.1" />
+    <xacro:property name="R2_color" value="sky_blue" />
+    <xacro:property name="R2_limit_effort" value="10.0" />
+    <xacro:property name="R2_limit_lower" value="${-pi}" />
+    <xacro:property name="R2_limit_upper" value="${pi}" />
+    <xacro:property name="R2_limit_velocity" value="1.0" />
+    <xacro:property name="R2_dynamics_damping" value="0.01" />
+    <xacro:property name="R2_dynamics_friction" value="1000.0" />
+
+    <xacro:property name="P1_length" value="0.1" />
+    <xacro:property name="P1_width" value="${R0_radius+(R1_length/2)}" />
+    <xacro:property name="P1_height" value="0.1" />
+    <xacro:property name="P1_mass" value="0.1" />
+    <xacro:property name="P1_color" value="purple" />
+
+    <xacro:property name="P2_length" value="${R1_radius+R2_radius+0.1}" />
+    <xacro:property name="P2_width" value="0.1" />
+    <xacro:property name="P2_height" value="0.05" />
+    <xacro:property name="P2_mass" value="0.1" />
+    <xacro:property name="P2_color" value="dark_gray" />
+
+    <xacro:property name="P3_length" value="0.2" />
+    <xacro:property name="P3_width" value="0.1" />
+    <xacro:property name="P3_height" value="0.05" />
+    <xacro:property name="P3_mass" value="0.1" />
+    <xacro:property name="P3_color" value="silver" />
+
+    <xacro:property name="S0_radius" value="0.05" />
+    <xacro:property name="S0_mass" value="0.01" />
+    <xacro:property name="S0_color" value="magenta" />
+
+
+    <!-- GAZEBO-->
+    <material name="white">
+        <color rgba="1 1 1 1"/>
+    </material>
+
+    <material name="orange">
+        <color rgba="1 0.3 0.1 1"/>
+    </material>
+
+    <material name="blue">
+        <color rgba="0.2 0.2 1 1"/>
+    </material>
+    
+    <material name="red">
+        <color rgba="1 0 0 1"/>
+    </material>
+
+    <material name="green">
+        <color rgba="0 1 0 1"/>
+    </material>
+
+    <material name="yellow">
+        <color rgba="1 1 0 1"/>
+    </material>
+
+    <material name="cyan">
+        <color rgba="0 1 1 1"/>
+    </material>
+
+    <material name="magenta">
+        <color rgba="1 0 1 1"/>
+    </material>
+
+    <material name="purple">
+        <color rgba="0.5 0 0.5 1"/>
+    </material>
+
+    <material name="teal">
+        <color rgba="0 0.5 0.5 1"/>
+    </material>
+
+    <material name="gold">
+        <color rgba="1 0.84 0 1"/>
+    </material>
+
+    <material name="silver">
+        <color rgba="0.75 0.75 0.75 1"/>
+    </material>
+
+    <material name="dark_gray">
+        <color rgba="0.3 0.3 0.3 1"/>
+    </material>
+
+    <material name="pink">
+        <color rgba="1 0.4 0.7 1"/>
+    </material>
+
+    <material name="lime">
+        <color rgba="0.7 1 0 1"/>
+    </material>
+
+    <material name="sky_blue">
+        <color rgba="0.5 0.8 1 1"/>
+    </material>
+
+
+</robot>
