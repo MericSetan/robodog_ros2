@@ -19,8 +19,8 @@
         <xacro:r_link name="${name}_R2_link" length="${R2_length}" radius="${R2_radius}" mass="${R2_mass}" color="${R2_color}"/>
         <!-- P3 -->
         <xacro:p_link name="${name}_P3_link" length="${P3_length}" width="${P3_width}" height="${P3_height}" mass="${P3_mass}" color="${P3_color}"/>
-        <!-- S0 -->
-        <xacro:s_link name="${name}_S0_link" radius="${S0_radius}" mass="${S0_mass}" color="${S0_color}"/>
+        <!-- P4 -->
+        <xacro:r_link name="${name}_P4_link" length="${P4_length}" radius="${P4_radius}" mass="${P4_mass}" color="${P4_color}"/>
 
 
         <!-- leg-P0 -->
@@ -81,11 +81,11 @@
             <child link="${name}_P3_link"/>
         </joint>
 
-        <!-- P3-S0 -->
-        <joint name="${name}_P3_S0_joint" type="fixed">
-            <origin xyz="${P3_length/2} 0 ${P3_height/2}" rpy="0 0 0"/>
+        <!-- P3-P4 -->
+        <joint name="${name}_P3_P4_joint" type="fixed">
+            <origin xyz="${P3_length/2} 0 ${(-P4_length/2)+(P3_height/2)}" rpy="0 0 0"/>
             <parent link="${name}_P3_link"/>
-            <child link="${name}_S0_link"/>
+            <child link="${name}_P4_link"/>
         </joint>
 
     </xacro:macro>

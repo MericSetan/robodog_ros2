@@ -15,6 +15,14 @@
                 <geometry>
                     <box size="${length} ${width} ${height}" />
                 </geometry>
+                <surface>
+                    <friction>
+                        <ode>
+                            <mu>100.0</mu> <!-- Static -->
+                            <mu2>100.0</mu2> <!-- Kinematic -->
+                        </ode>
+                    </friction>
+                </surface>
             </collision>
             <xacro:inertial_box mass="${mass}" x="${length}" y="${width}" z="${height}" origin="0 0 ${height/2}" />
         </link>
